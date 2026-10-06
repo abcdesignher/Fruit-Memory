@@ -1,0 +1,417 @@
+# Master Prompt — Fruit Memory Card Game
+
+You are an experienced product designer and product engineer who builds polished web applications using agentic IDEs.
+
+Build a simple, fun, polished **Fruit Memory Card Game** using:
+
+- HTML
+- CSS
+- Vanilla JavaScript
+- No frameworks
+- No external libraries unless absolutely necessary
+
+## Product
+
+Create a **Fruit Memory** game where players flip cards to find matching pairs of fruit emojis.
+
+The goal is to match all fruit pairs using as few moves as possible.
+
+The experience should feel **fun, playful, friendly, and engaging**, while remaining visually clean and simple.
+
+---
+
+## Visual Direction
+
+Use a **soft pastel green color palette** throughout the interface.
+
+The design should feel:
+
+- Fresh
+- Playful
+- Soft
+- Friendly
+- Modern
+- Light
+- Fun
+
+### Color Palette
+
+Use a very light green-tinted background rather than pure white.
+
+Suggested palette:
+
+- Page background: `#F1F8F1`
+- Primary pastel green: `#B7DDB7`
+- Soft green: `#DDEEDD`
+- Dark green text: `#31543A`
+- Medium green: `#6F9F78`
+- Card background: `#FFFFFF`
+- Soft border: `#D5E7D5`
+- Success green: `#8FBE98`
+
+You may adjust these values slightly if needed to create a more cohesive visual system.
+
+**Do not use a pure white page background.**
+
+White can still be used inside cards or UI elements for contrast.
+
+Avoid:
+
+- Neon colors
+- Very saturated greens
+- Dark backgrounds
+- Excessive gradients
+- Overly complicated visual effects
+
+---
+
+## Overall UI
+
+Create a centered game interface with a comfortable amount of whitespace.
+
+The interface should feel like a small polished game rather than a generic JavaScript exercise.
+
+Use:
+
+- Rounded corners
+- Soft shadows
+- Pastel green surfaces
+- Friendly typography
+- Clear visual hierarchy
+- Smooth animations
+- Playful micro-interactions
+
+Keep the interface uncluttered.
+
+---
+
+# Header
+
+At the top of the game, display:
+
+### 🍓 Fruit Memory
+
+Subtitle:
+
+**Match the fruits and test your memory!**
+
+The title should feel playful and welcoming.
+
+You can include a small decorative fruit emoji around the title if it improves the design, but don't overcrowd the header.
+
+---
+
+# Game Information
+
+Display three pieces of information above the card grid:
+
+### Moves
+`0`
+
+### Pairs
+`0 / 8`
+
+### Time
+`00:00`
+
+Present these as small rounded pastel-green information cards or badges.
+
+Make the values visually prominent.
+
+---
+
+# Memory Card Grid
+
+Create a **4 × 4 grid** containing 16 cards.
+
+There should be 8 different fruits, with each fruit appearing exactly twice.
+
+Use fruit emojis such as:
+
+- 🍎 Apple
+- 🍌 Banana
+- 🍊 Orange
+- 🍇 Grapes
+- 🍉 Watermelon
+- 🍓 Strawberry
+- 🥝 Kiwi
+- 🍍 Pineapple
+
+The emojis should be large and easy to recognize.
+
+---
+
+# Card Design
+
+Each card has two states.
+
+## Hidden State
+
+When hidden:
+
+- Do not show the fruit.
+- Use a soft pastel green card design.
+- Include a simple playful visual treatment, such as a subtle fruit symbol, leaf, sparkle, or question mark.
+- Keep the card visually interesting without revealing the fruit.
+
+Example:
+
+`🍃`
+
+or
+
+`?`
+
+The hidden card should make players want to click it.
+
+## Revealed State
+
+When revealed:
+
+- Show the fruit emoji prominently.
+- Use a soft, light card background.
+- Add a subtle shadow or border.
+- Animate the card flipping smoothly.
+
+## Matched State
+
+When two cards match:
+
+- Keep both cards revealed.
+- Add a subtle pastel-green highlight.
+- Use a gentle success animation.
+- Clearly communicate that the pair has been found.
+
+Do not make matched cards disappear.
+
+---
+
+# Card Animation
+
+Use a smooth card-flip animation.
+
+The interaction should feel satisfying:
+
+1. Player clicks a card.
+2. Card flips.
+3. Fruit appears.
+4. Player selects another card.
+5. Second card flips.
+6. If matched, both receive a subtle success animation.
+7. If not matched, wait briefly and flip both cards back.
+
+Keep animations fast enough that the game never feels slow.
+
+---
+
+# Game Logic
+
+When the page loads:
+
+1. Create 8 fruit pairs.
+2. Duplicate each fruit.
+3. Shuffle the cards randomly.
+4. Render the 16 cards.
+5. Keep all cards hidden.
+6. Reset moves, pairs, and timer.
+
+When a player clicks a card:
+
+1. Reveal the card.
+2. Store the selected card.
+3. Allow the player to select a second card.
+4. Compare the two selected cards.
+5. Increase the moves counter.
+6. If they match:
+   - Keep both cards revealed.
+   - Mark them as matched.
+   - Increase the pairs counter.
+7. If they don't match:
+   - Keep them visible briefly.
+   - Flip them back.
+8. Allow the player to continue.
+
+Prevent:
+
+- Clicking a matched card
+- Clicking the same card twice
+- Selecting more than two cards at once
+- Clicking additional cards while two unmatched cards are being checked
+
+---
+
+# Timer
+
+The timer should:
+
+- Start when the first card is clicked.
+- Count upward.
+- Display time as `00:00`.
+- Stop when the player matches all 8 pairs.
+- Reset when a new game begins.
+
+Do not start the timer before the player makes their first move.
+
+---
+
+# New Game
+
+Include a clearly visible **New Game** button.
+
+Use a soft pastel green button style.
+
+When clicked:
+
+- Shuffle all cards.
+- Reset the cards.
+- Reset moves to `0`.
+- Reset pairs to `0 / 8`.
+- Reset the timer to `00:00`.
+- Hide the win state if visible.
+- Start a completely new game.
+
+---
+
+# Winning State
+
+When all 8 pairs have been matched, show a playful success state.
+
+Example:
+
+### 🎉 You Won!
+
+**Amazing memory! You matched all the fruits.**
+
+Display:
+
+- Final moves
+- Final time
+- `8 / 8` pairs completed
+
+Include a prominent:
+
+**Play Again**
+
+button.
+
+Add a subtle celebratory animation, such as floating fruit emojis or small confetti-like shapes.
+
+Keep the celebration tasteful and lightweight.
+
+---
+
+# Fun & Engagement
+
+Make the game feel playful through small details.
+
+Consider:
+
+- Fruit emojis bouncing slightly when matched
+- Small scale animation when cards are clicked
+- Gentle hover effects
+- A subtle success animation
+- Playful win message
+- Floating fruit decorations around the game area
+- Smooth button interactions
+
+Do not add unnecessary sounds, complicated effects, or distracting animations.
+
+The game should remain quick and enjoyable.
+
+---
+
+# Responsive Design
+
+The game must work well on:
+
+- Desktop
+- Tablet
+- Mobile
+
+Desktop:
+
+- Use a comfortable 4 × 4 grid.
+- Keep the game centered.
+- Avoid making the game excessively wide.
+
+Mobile:
+
+- Maintain a 4 × 4 grid where practical.
+- Reduce card size appropriately.
+- Keep emojis clearly visible.
+- Make buttons easy to tap.
+- Prevent horizontal scrolling.
+
+---
+
+# Code Structure
+
+Use three files:
+
+- `index.html`
+- `style.css`
+- `script.js`
+
+Keep the JavaScript clean and easy to understand.
+
+Organize the logic into functions such as:
+
+- `initializeGame()`
+- `createCards()`
+- `shuffleCards()`
+- `renderCards()`
+- `handleCardClick()`
+- `checkMatch()`
+- `startTimer()`
+- `stopTimer()`
+- `resetGame()`
+- `showWinState()`
+
+Use CSS classes to control visual states rather than relying heavily on inline styles.
+
+---
+
+# Accessibility & Usability
+
+Make the game easy to use.
+
+Ensure:
+
+- Buttons have clear labels.
+- Text has sufficient contrast.
+- Cards have clear interactive states.
+- Keyboard interaction is considered where practical.
+- The interface remains understandable without relying entirely on color.
+
+---
+
+# Final Quality Requirements
+
+Before finishing:
+
+1. Test the complete game flow.
+2. Make sure cards are randomly shuffled.
+3. Make sure every fruit appears exactly twice.
+4. Make sure matching works correctly.
+5. Make sure unmatched cards flip back.
+6. Make sure the same card cannot be selected twice.
+7. Make sure additional cards cannot be selected while two cards are being checked.
+8. Make sure the timer starts on the first move.
+9. Make sure the timer stops when the game is completed.
+10. Make sure moves and pairs update correctly.
+11. Make sure the win state appears after all pairs are matched.
+12. Make sure New Game completely resets the game.
+13. Test the responsive layout on desktop and mobile.
+14. Fix any visual or interaction issues you find.
+
+## Final Design Goal
+
+The finished product should look and feel like a **small, polished, playful fruit-themed memory game**.
+
+Use the **soft pastel green palette** as the visual identity, with a **very light green-tinted background instead of white**.
+
+Prioritize:
+
+**Fun + simplicity + polish + satisfying interactions.**
+
+Do not add authentication, backend functionality, multiplayer, advertisements, or unnecessary features.

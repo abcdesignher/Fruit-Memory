@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Memory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="floating-fruits" aria-hidden="true">
+    <span class="float-fruit" style="--d: 0s;   --x: 6%;  --s: 1.6rem;">🍓</span>
+    <span class="float-fruit" style="--d: 2.5s; --x: 14%; --s: 1.3rem;">🍇</span>
+    <span class="float-fruit" style="--d: 5s;   --x: 88%; --s: 1.5rem;">🍊</span>
+    <span class="float-fruit" style="--d: 1.4s; --x: 92%; --s: 1.2rem;">🥝</span>
+    <span class="float-fruit" style="--d: 3.8s; --x: 78%; --s: 1.4rem;">🍌</span>
+    <span class="float-fruit" style="--d: 6.2s; --x: 24%; --s: 1.2rem;">🍉</span>
+  </div>
+
+  <main class="game">
+    <header class="header">
+      <h1 class="title">🍓 Fruit Memory</h1>
+      <p class="subtitle">Match the fruits and test your memory!</p>
+    </header>
+
+    <section class="stats" aria-label="Game statistics">
+      <div class="stat">
+        <span class="stat-label">Moves</span>
+        <span class="stat-value" id="moves">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Pairs</span>
+        <span class="stat-value" id="pairs">0 / 8</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time</span>
+        <span class="stat-value" id="time">00:00</span>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div class="board" id="board" aria-label="Memory card grid"></div>
+    </section>
+
+    <div class="actions">
+      <button type="button" class="btn btn-primary" id="newGameBtn">New Game</button>
+    </div>
+
+    <div class="win-overlay" id="winOverlay" hidden>
+      <div class="win-card" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+        <div class="win-emoji">🎉</div>
+        <h2 class="win-title" id="winTitle">You Won!</h2>
+        <p class="win-text">Amazing memory! You matched all the fruits.</p>
+        <div class="win-stats">
+          <div class="win-stat">
+            <span class="win-stat-label">Moves</span>
+            <span class="win-stat-value" id="winMoves">0</span>
+          </div>
+          <div class="win-stat">
+            <span class="win-stat-label">Time</span>
+            <span class="win-stat-value" id="winTime">00:00</span>
+          </div>
+          <div class="win-stat">
+            <span class="win-stat-label">Pairs</span>
+            <span class="win-stat-value">8 / 8</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg" id="playAgainBtn">Play Again</button>
+      </div>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
