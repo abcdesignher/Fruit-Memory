@@ -37,5 +37,4 @@ The timer starts on your first click. Try to win with as few moves as possible.
 A modern web browser. Nothing else.
 
 ## Live Demo
-
 https://fruit-memory-gamma.vercel.app/
